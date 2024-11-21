@@ -1,0 +1,370 @@
+Connect to a running mongo instance, use a database named mongo_practice.
+
+Insert Document
+Insert the following data into movies collection
+
+[
+    {
+        title : "Fight Club",
+        writer : "Chuck Palahniuk",
+        year : 1999,
+        actors : [
+        "Brad Pitt",
+        "Edward Norton"
+        ]
+    },
+    {
+        title : "Pulp Fiction",
+        writer : "Quentin Tarantino",
+        year : 1994,
+        actors : [
+        "John Travolta",
+        "Uma Thurman"
+        ]
+    },
+    {
+        title : "Inglorious Basterds",
+        writer : "Quentin Tarantino",
+        year : 2009,
+        actors : [
+        "Brad Pitt",
+        "Diane Kruger",
+        "Eli Roth"
+        ]
+    },
+    {
+        title : "The Hobbit: An Unexpected Journey",
+        writer : "J.R.R. Tolkein",
+        year : 2012,
+        franchise : "The Hobbit"
+    },
+    {
+    title : "The Hobbit: The Desolation of Smaug",
+    writer : "J.R.R. Tolkein",
+    year : 2013,
+    franchise : "The Hobbit"
+    },
+    {
+        title : "The Hobbit: The Battle of the Five Armies",
+        writer : "J.R.R. Tolkein",
+        year : 2012,
+        franchise : "The Hobbit",
+        synopsis : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+    },
+    {title : "Pee Wee Herman's Big Adventure"},
+    {title : "Avatar"}
+
+]
+Answer
+Query / Find Documents
+query the movies collection to
+
+get all documents
+get all documents with writer set to "Quentin Tarantino"
+get all documents where actors include "Brad Pitt"
+get all documents with franchise set to "The Hobbit"
+get all movies released in the 90s
+get all movies released before the year 2000 or after 2010
+
+Update Documents
+add a synopsis to "The Hobbit: An Unexpected Journey" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+add a synopsis to "The Hobbit: The Desolation of Smaug" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+add an actor named "Samuel L. Jackson" to the movie "Pulp Fiction"
+
+Text Search
+find all movies that have a synopsis that contains the word "Bilbo"
+find all movies that have a synopsis that contains the word "Gandalf"
+find all movies that have a synopsis that contains the word "Bilbo" and not the word "Gandalf"
+find all movies that have a synopsis that contains the word "dwarves" or "hobbit"
+find all movies that have a synopsis that contains the word "gold" and "dragon"
+Delete Documents
+delete the movie "Pee Wee Herman's Big Adventure"
+delete the movie "Avatar"
+
+Insert Documents
+Insert the following data into persons collection
+
+[
+    {
+        name: "Sue Ramsey",
+        age: 35,
+        country: "Algeria"
+    },
+    {
+        name: "Leah McLaughlin",
+        age: 29,
+        country: "Japan"
+    },
+    {
+        name: "Luke Chandler",
+        age: 20,
+        country: "Argentina"
+    },
+    {
+        name: "Douglas Harrington",
+        age: 29,
+        country: "United Kingdom"
+    },
+    {
+        name: "Esther Lamb",
+        age: 30,
+        country: "Italy"
+    },
+    {
+        name: "Viola Gomez",
+        age: 34,
+        country: "United States"
+    },
+    {
+        name: "Beatrice Webster",
+        age: 17,
+        country: "India"
+    },
+    {
+        name: "Steve Webster",
+        age: 33,
+        country: "Japan"
+    },
+    {
+        name: "Mollie Estrada",
+        age: 24,
+        country: "Russia"
+    },
+    {
+        name: "Susie Fisher",
+        age: 28,
+        country: "Canada"
+    },
+    {
+        name: "Loretta Reynolds",
+        age: 27,
+        country: "United States"
+    },
+    {
+        name: "Lou Campbell",
+        age: 34,
+        country: "France"
+    },
+    {
+        name: "Marion Henry",
+        age: 33,
+        country: "India"
+    },
+    {
+        name: "Daniel Thomas",
+        age: 20,
+        country: "Italy"
+    },
+    {
+        name: "Sarah Palmer",
+        age: 18,
+        country: "India"
+    },
+    {
+        name: "Emilie Stevenson",
+        age: 35,
+        country: "Japan"
+    },
+    {
+        name: "Manuel Knight",
+        age: 33,
+        country: "United Kingdom"
+    },
+    {
+        name: "Nathan Howell",
+        age: 29,
+        country: "Germany"
+    },
+    {
+        name: "Brent Thornton",
+        age: 21,
+        country: "United States"
+    },
+    
+]
+
+Questions
+Find all persons between the age between 20 and 30.
+Find all persons except those whose name isn't in ["Nathan Howell", "Marion Henry", "Emilie Stevenson"]
+Find all persons in one of these countries ["Canada", "United States", "France"]
+Set every person's gender to male.
+Remove the field gender from every document.
+Rename the name field name to fullName.
+Rename the fullName field to name.
+Find the count of documents.
+How many people live in each country? The output should only contain the country and count.
+How many people live in India.
+Find the average age of each country. The output should only contain country and averageAge
+Find the people belonging to each country. The output should be like {country: "name of the country", persons: [names of people]}
+
+Relationships
+Insert the following documents into a users collection
+[
+    {   username : "GoodGuyGreg",
+        first_name : "Good Guy",
+        last_name : "Greg"
+    },
+    {
+        username : "ScumbagSteve",
+        first_name : "Scumbag",
+        last_name : "Steve"
+    }
+]
+
+Insert the following array into a posts collection
+[
+    {
+        username : "GoodGuyGreg",
+        title : "Passes out at party",
+        body : "Wakes up early and cleans house"
+    },
+    {
+        username : "GoodGuyGreg",
+        title : "Steals your identity",
+        body : "Raises your credit score"
+    },
+    {
+        username : "GoodGuyGreg",
+        title : "Reports a bug in your code",
+        body : "Sends you a Pull Request"
+    },
+    {
+        username : "ScumbagSteve",
+        title : "Borrows something",
+        body : "Sells it"
+    },
+    {
+        username : "ScumbagSteve",
+        title : "Borrows everything",
+        body : "The end"
+    },
+    {
+        username : "ScumbagSteve",
+        title : "Forks your repo on github",
+        body : "Sets to private"
+    }
+]
+
+
+Insert the following documents into a comments collection
+{
+    username : "GoodGuyGreg",
+    comment : "Hope you got a good deal!",
+    post : [post_obj_id]
+}
+where [post_obj_id] is the ObjectId of the posts document: "Borrows something"
+
+{
+    username : "GoodGuyGreg",
+    comment : "What's mine is yours!",
+    post : [post_obj_id]
+}
+where [post_obj_id] is the ObjectId of the posts document: "Borrows everything"
+
+{
+    username : "GoodGuyGreg",
+    comment : "Don't violate the licensing agreement!",
+    post : [post_obj_id]
+}
+where [post_obj_id] is the ObjectId of the posts document: "Forks your repo on github
+
+{
+    username : "ScumbagSteve",
+    comment : "It still isn't clean",
+    post : [post_obj_id],
+}
+where [post_obj_id] is the ObjectId of the posts document: "Passes out at party"
+
+{
+    username : "ScumbagSteve",
+    comment : "Denied your PR cause I found a hack",
+    post : [post_obj_id]
+}
+where [post_obj_id] is the ObjectId of the posts document: "Reports a bug in your code"
+
+Don't forget to copy the post_obj_id from the posts collection
+
+
+
+Querying related collections
+find all users
+find all posts
+find all posts that was authored by "GoodGuyGreg"
+find all posts that was authored by "ScumbagSteve"
+find all comments
+find all comments that was authored by "GoodGuyGreg"
+find all comments that was authored by "ScumbagSteve"
+find all comments belonging to the post "Reports a bug in your code"
+Set the gender to male for every user.
+Find the documents and add a new field called full_name to the documents.
+Find all articles and comments related to a user.
+
+Querying related collections Answer
+db.users.find()
+db.posts.find()
+db.posts.find({username: "GoodGuyGreg"})
+db.posts.find({username: "ScumbagSteve"})
+db.comments.find()
+db.comments.find({username: "GoodGuyGreg"})
+db.comments.find({username: "ScumbagSteve"})
+db.posts.aggregate([
+    {
+        $match: {title: "Reports a bug in your code"}
+    },
+    {
+        $project: {title: 1}
+    },
+    {
+        $lookup: {
+            from: "comments",
+            localField: "_id",
+            foreignField: "post",
+            as: "comments"
+        }
+    },
+    {
+        $project: {_id: 0}
+    }
+])
+db.users.updateMany(
+    {},
+    {$set: {gender: "male"}}
+)
+db.users.aggregate([
+    {
+        /**
+         * newField: The new field name.
+         * expression: The new field expression.
+         */
+        $addFields: {
+          full_name: {$concat: ["$first_name", " ", "$last_name"]}
+        }
+    }
+])
+db.users.aggregate([
+    {
+        $lookup: {
+          from: "posts",
+          localField: "username",
+          foreignField: "username",
+          as: "posts"
+        }
+    },
+    {
+        $lookup: {
+          from: "comments",
+          localField: "username",
+          foreignField: "username",
+          as: "comments"
+        }
+    },
+    {
+        $project: {
+            username: 1, 
+            "posts.title": 1,
+            "posts.body": 1,
+            "comments.comment": 1,
+            "comments.post": 1
+        }
+    }
+])
